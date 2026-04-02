@@ -1,34 +1,120 @@
-<section class="px-5 h-full flex flex-col justify-center pb-14">
-  <div class="max-w-7xl mx-auto w-full">
+<section class="px-5 h-full flex flex-col pb-14">
+  <div class="flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full">
     <div class="text-center mb-1">
       <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
     </div>
-    <h2 class="section-heading text-2xl sm:text-4xl text-center mb-4 sm:mb-8">Operating Team</h2>
+    <h2 class="section-heading text-2xl sm:text-4xl text-center mb-3 sm:mb-6">Operating Team</h2>
 
-    <div class="grid grid-cols-2 gap-4 md:gap-8">
+    <!-- Desktop side-by-side -->
+    <div class="hidden md:grid md:grid-cols-2 gap-8">
       <!-- Chris -->
-      <div>
-        <div class="glass-strong p-3 sm:p-5 mb-3 text-center">
-          <img src="/images/team-chris.jpg" alt="Chris Mahoney" class="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover object-top shadow-lg border-2 border-white mx-auto mb-2" loading="lazy" />
-          <h3 class="text-base sm:text-2xl text-burgundy" style="font-family: var(--font-heading);">Chris Mahoney</h3>
-          <span class="pill text-[9px] sm:text-xs mt-1 px-2 py-0.5 inline-block">CMO</span>
+      <div class="glass-strong p-5 flex flex-col">
+        <div class="flex items-center gap-4 mb-3">
+          <img src="/images/team-chris.jpg" alt="Chris Mahoney" class="w-20 h-20 rounded-full object-cover object-top shadow-lg border-2 border-white flex-shrink-0" loading="lazy" />
+          <div>
+            <h3 class="text-2xl text-burgundy" style="font-family: var(--font-heading);">Chris Mahoney</h3>
+            <span class="pill text-xs mt-1 px-2 py-0.5 inline-block">CMO</span>
+          </div>
         </div>
-        <p class="text-[10px] sm:text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
-          22+ years at the intersection of performance marketing, financial modeling, and tech innovation. Known for building &ldquo;engines of growth&rdquo; in fintech, proptech, and ed tech. He engineers acquisition ecosystems where every creative touchpoint is backed by operational precision.
+        <p class="text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
+          Chris Mahoney is a high-growth operating executive and strategic brand architect with over 22 years of experience at the intersection of performance marketing, financial modeling, and technological innovation. As the Chief Marketing Officer of HELM, Chris brings the rigorous discipline of a COO to the creative and psychological landscape of luxury experiential marketing. He is responsible for the platform&rsquo;s overarching brand narrative, its sophisticated design language, and the data-driven systems that fuel its growth initiatives.
+        </p>
+        <p class="text-xs leading-relaxed text-charcoal/70 mt-2" style="font-family: var(--font-body);">
+          Throughout his career, Chris has established a reputation for building &ldquo;engines of growth&rdquo; within high-stakes industry verticals, specifically fintech, real estate technology (proptech), and ed tech. His marketing approach is fundamentally rooted in unit economics and abstract funnels&mdash;he engineers acquisition ecosystems that ensure every creative touchpoint is backed by operational precision. By treating a brand&rsquo;s narrative as a piece of financial infrastructure, Chris has successfully scaled platforms where trust, transparency, and high-value transactions are the primary currency.
         </p>
       </div>
 
       <!-- Ben -->
-      <div>
-        <div class="glass-strong p-3 sm:p-5 mb-3 text-center">
-          <img src="/images/team-ben.jpg" alt="Ben Karpinski" class="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover object-top shadow-lg border-2 border-white mx-auto mb-2" loading="lazy" />
-          <h3 class="text-base sm:text-2xl text-burgundy" style="font-family: var(--font-heading);">Ben Karpinski</h3>
-          <span class="pill text-[9px] sm:text-xs mt-1 px-2 py-0.5 inline-block">Product Architect</span>
+      <div class="glass-strong p-5 flex flex-col">
+        <div class="flex items-center gap-4 mb-3">
+          <img src="/images/team-ben.jpg" alt="Ben Karpinski" class="w-20 h-20 rounded-full object-cover object-top shadow-lg border-2 border-white flex-shrink-0" loading="lazy" />
+          <div>
+            <h3 class="text-2xl text-burgundy" style="font-family: var(--font-heading);">Ben Karpinski</h3>
+            <span class="pill text-xs mt-1 px-2 py-0.5 inline-block">Product Architect</span>
+          </div>
         </div>
-        <p class="text-[10px] sm:text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
-          Technology operator and systems architect specializing in custom platforms, CRM ecosystems, and AI-driven solutions. Leads the design and development of HELM&rsquo;s systems connecting brand, operations, and data with precision and scalability.
+        <p class="text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
+          Ben Karpinski is a technology operator and systems architect focused on building the infrastructure that powers modern, experience-driven businesses. From an early age, he was drawn to both technology and storytelling&mdash;building computers and exploring media&mdash;before transitioning into marketing within live entertainment environments. This foundation led him to the intersection of experience, operations, and technology, where he began developing and implementing systems for high-volume hospitality venues, including scaling digital and operational infrastructure for a major axe-throwing franchise.
         </p>
+        <p class="text-xs leading-relaxed text-charcoal/70 mt-2" style="font-family: var(--font-body);">
+          As the founder of his own technology company, Ben has since specialized in building custom platforms, CRM ecosystems, and AI-driven solutions that streamline operations and enhance customer experience. As the product architect of HELM, he leads the design and development of the systems that connect brand, operations, and data&mdash;ensuring the business runs with precision, scalability, and consistency behind the scenes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mobile swiper -->
+    <div class="md:hidden">
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          <!-- Chris -->
+          <div class="swiper-slide">
+            <div class="glass-strong p-4 h-full overflow-y-auto">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="/images/team-chris.jpg" alt="Chris Mahoney" class="w-14 h-14 rounded-full object-cover object-top shadow-lg border-2 border-white flex-shrink-0" loading="lazy" />
+                <div>
+                  <h3 class="text-lg text-burgundy" style="font-family: var(--font-heading);">Chris Mahoney</h3>
+                  <span class="pill text-[9px] px-2 py-0.5 inline-block">CMO</span>
+                </div>
+              </div>
+              <p class="text-[11px] leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
+                Chris Mahoney is a high-growth operating executive and strategic brand architect with over 22 years of experience at the intersection of performance marketing, financial modeling, and technological innovation. As the Chief Marketing Officer of HELM, Chris brings the rigorous discipline of a COO to the creative and psychological landscape of luxury experiential marketing. He is responsible for the platform&rsquo;s overarching brand narrative, its sophisticated design language, and the data-driven systems that fuel its growth initiatives.
+              </p>
+              <p class="text-[11px] leading-relaxed text-charcoal/70 mt-2" style="font-family: var(--font-body);">
+                Throughout his career, Chris has established a reputation for building &ldquo;engines of growth&rdquo; within high-stakes industry verticals, specifically fintech, real estate technology (proptech), and ed tech. His marketing approach is fundamentally rooted in unit economics and abstract funnels&mdash;he engineers acquisition ecosystems that ensure every creative touchpoint is backed by operational precision. By treating a brand&rsquo;s narrative as a piece of financial infrastructure, Chris has successfully scaled platforms where trust, transparency, and high-value transactions are the primary currency.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ben -->
+          <div class="swiper-slide">
+            <div class="glass-strong p-4 h-full overflow-y-auto">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="/images/team-ben.jpg" alt="Ben Karpinski" class="w-14 h-14 rounded-full object-cover object-top shadow-lg border-2 border-white flex-shrink-0" loading="lazy" />
+                <div>
+                  <h3 class="text-lg text-burgundy" style="font-family: var(--font-heading);">Ben Karpinski</h3>
+                  <span class="pill text-[9px] px-2 py-0.5 inline-block">Product Architect</span>
+                </div>
+              </div>
+              <p class="text-[11px] leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
+                Ben Karpinski is a technology operator and systems architect focused on building the infrastructure that powers modern, experience-driven businesses. From an early age, he was drawn to both technology and storytelling&mdash;building computers and exploring media&mdash;before transitioning into marketing within live entertainment environments. This foundation led him to the intersection of experience, operations, and technology, where he began developing and implementing systems for high-volume hospitality venues, including scaling digital and operational infrastructure for a major axe-throwing franchise.
+              </p>
+              <p class="text-[11px] leading-relaxed text-charcoal/70 mt-2" style="font-family: var(--font-body);">
+                As the founder of his own technology company, Ben has since specialized in building custom platforms, CRM ecosystems, and AI-driven solutions that streamline operations and enhance customer experience. As the product architect of HELM, he leads the design and development of the systems that connect brand, operations, and data&mdash;ensuring the business runs with precision, scalability, and consistency behind the scenes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-1.5 mt-3">
+          <div class="team-dot w-1.5 h-1.5 rounded-full bg-burgundy/20" data-index="0"></div>
+          <div class="team-dot w-1.5 h-1.5 rounded-full bg-burgundy/20" data-index="1"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  function initTeamSwiper() {
+    if (typeof Swiper === 'undefined') {
+      setTimeout(initTeamSwiper, 100);
+      return;
+    }
+    new Swiper('.team-swiper', {
+      slidesPerView: 1, spaceBetween: 12,
+      on: { slideChange: function() {
+        document.querySelectorAll('.team-dot').forEach(function(d, i) {
+          if (i === this.activeIndex) { d.style.background = '#C41E3A'; d.style.width = '12px'; }
+          else { d.style.background = 'rgba(91,26,42,0.2)'; d.style.width = '6px'; }
+        }.bind(this));
+      }}
+    });
+    var first = document.querySelector('.team-dot[data-index="0"]');
+    if (first) { first.style.background = '#C41E3A'; first.style.width = '12px'; }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTeamSwiper);
+  } else {
+    initTeamSwiper();
+  }
+</script>
+<style>.team-dot { transition: all 0.3s ease; }</style>
