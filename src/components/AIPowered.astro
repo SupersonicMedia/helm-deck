@@ -1,0 +1,102 @@
+---
+const features = [
+  {
+    title: 'Curated Marketplace',
+    description: 'Vetted chefs, servers, bartenders, venues and entertainment professionals\u2014all verified and ready to deliver excellence.',
+    image: '/images/feature-marketplace.jpg',
+  },
+  {
+    title: 'Agentic AI Planner',
+    description: 'Intelligent automation that sources optimal vendors, builds timelines, recommends quantities, coordinates options, and manages confirmations\u2014not just a chatbot.',
+    image: '/images/why-helm.jpg',
+  },
+  {
+    title: 'Execution Layer',
+    description: 'Seamless booking, messaging, transactions, reviews, and accountability\u2014all in one premium platform with consistent outcomes.',
+    image: '/images/hero-3.jpg',
+  },
+];
+---
+
+<section class="py-28 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <div class="mb-3 fade-up">
+      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-8 w-auto mx-auto" />
+    </div>
+    <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 fade-up">
+      AI-Powered Event Excellence
+    </h2>
+    <div class="w-16 h-0.5 bg-gradient-to-r from-red to-burgundy mx-auto mb-14 fade-up"></div>
+
+    <!-- Swiper on mobile, grid on desktop -->
+    <div class="hidden md:grid md:grid-cols-3 gap-8 mb-14">
+      {features.map((feature, i) => (
+        <div class="group glass-strong overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer fade-up" style={`transition-delay: ${i * 150}ms`}>
+          <div class="h-60 overflow-hidden relative">
+            <img src={feature.image} alt={feature.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-burgundy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          <div class="p-7">
+            <h3 class="text-xl font-bold text-burgundy mb-3" style="font-family: var(--font-heading);">{feature.title}</h3>
+            <p class="text-charcoal/75 leading-relaxed text-sm" style="font-family: var(--font-body);">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile swiper -->
+    <div class="md:hidden mb-14 fade-up">
+      <div class="swiper features-swiper">
+        <div class="swiper-wrapper">
+          {features.map((feature) => (
+            <div class="swiper-slide">
+              <div class="glass-strong overflow-hidden mx-1">
+                <div class="h-48 overflow-hidden">
+                  <img src={feature.image} alt={feature.title} class="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-bold text-burgundy mb-2" style="font-family: var(--font-heading);">{feature.title}</h3>
+                  <p class="text-charcoal/75 leading-relaxed text-xs" style="font-family: var(--font-body);">{feature.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+
+    <!-- Bottom note -->
+    <div class="glass-dark p-6 sm:p-8 max-w-4xl mx-auto fade-up">
+      <p class="text-sm sm:text-base italic text-charcoal/70 leading-relaxed" style="font-family: var(--font-body);">
+        The AI planner will first source vendors directly from HELM&rsquo;s curated marketplace. For larger or more complex events, it will also reference a growing dataset of hospitality operations and past event outcomes to optimize planning.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider max-w-5xl mx-auto"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.features-swiper', {
+        slidesPerView: 1.15,
+        spaceBetween: 8,
+        centeredSlides: true,
+        pagination: { el: '.features-swiper .swiper-pagination', clickable: true },
+      });
+    }
+  });
+</script>
+
+<style>
+  .features-swiper .swiper-pagination-bullet {
+    background: var(--color-burgundy);
+    opacity: 0.3;
+  }
+  .features-swiper .swiper-pagination-bullet-active {
+    background: var(--color-red);
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+const kpis = [
+  { metric: 'Bookings', y2026: '5,226', y2027: '18,432', yoy: '253%' },
+  { metric: 'CAC', y2026: '$158.58', y2027: '$101.69', yoy: '-36%' },
+  { metric: 'Revenue', y2026: '$1,167,400', y2027: '$8,268,377', yoy: '608%' },
+  { metric: 'Active Users', y2026: '9,207', y2027: '35,766', yoy: '288%' },
+  { metric: 'ARPU/Month', y2026: '$126.79', y2027: '$231.18', yoy: '82%' },
+  { metric: 'LTV', y2026: '$3,169.78', y2027: '$3,853.04', yoy: '22%' },
+  { metric: 'LTV:CAC', y2026: '$19.99', y2027: '$37.89', yoy: '90%' },
+];
+---
+
+<section class="py-28 px-4 sm:px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-3 fade-up">
+      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-8 w-auto mx-auto" />
+    </div>
+    <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 fade-up">
+      Economics
+    </h2>
+    <div class="w-16 h-0.5 bg-gradient-to-r from-red to-burgundy mx-auto mb-14 fade-up"></div>
+
+    <div class="fade-up glass-strong p-4 sm:p-8 overflow-x-auto">
+      <table class="w-full border-collapse min-w-[500px]" style="font-family: var(--font-body);">
+        <thead>
+          <tr>
+            <th class="bg-gradient-to-r from-burgundy-dark to-burgundy text-white py-3 px-4 sm:px-6 text-left text-sm font-bold rounded-tl-lg">KPI</th>
+            <th class="bg-gradient-to-r from-burgundy to-burgundy text-white py-3 px-4 sm:px-6 text-center text-sm font-bold">2026</th>
+            <th class="bg-gradient-to-r from-burgundy to-burgundy text-white py-3 px-4 sm:px-6 text-center text-sm font-bold">2027</th>
+            <th class="bg-gradient-to-r from-burgundy to-burgundy-dark text-white py-3 px-4 sm:px-6 text-center text-sm font-bold rounded-tr-lg">YOY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {kpis.map((row, i) => (
+            <tr class={`transition-colors hover:bg-burgundy/5 ${i % 2 === 0 ? 'bg-white/30' : 'bg-white/10'}`}>
+              <td class="py-3 px-4 sm:px-6 font-bold text-sm border-b border-burgundy/10">{row.metric}</td>
+              <td class="py-3 px-4 sm:px-6 text-center text-sm border-b border-burgundy/10">{row.y2026}</td>
+              <td class="py-3 px-4 sm:px-6 text-center text-sm border-b border-burgundy/10">{row.y2027}</td>
+              <td class="py-3 px-4 sm:px-6 text-center text-sm font-semibold border-b border-burgundy/10">
+                <span class={row.yoy.startsWith('-') ? 'text-green-700' : 'text-red-accent'}>{row.yoy}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr class="bg-gradient-to-r from-cream-dark/50 to-cream-dark/30">
+            <td class="py-4 px-4 sm:px-6 font-bold text-burgundy text-sm border-t-2 border-burgundy/30">GROSS PROFIT</td>
+            <td class="py-4 px-4 sm:px-6 text-center font-bold text-burgundy text-sm border-t-2 border-burgundy/30">$338,650</td>
+            <td class="py-4 px-4 sm:px-6 text-center font-bold text-red text-sm border-t-2 border-burgundy/30">$6,394,002</td>
+            <td class="py-4 px-4 sm:px-6 text-center font-bold text-red text-lg border-t-2 border-burgundy/30">1788%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>

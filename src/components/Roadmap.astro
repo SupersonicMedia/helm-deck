@@ -1,0 +1,89 @@
+---
+const quarters = [
+  { period: 'Q2.2026', items: ['Launch MVP in New York', 'SEO/Paid Search/Paid Social', 'PR onboarding', 'Hire product and business development teams'] },
+  { period: 'Q3.2026', items: ['Launch in South Florida', 'Influencer UGC campaigns', 'Add servers, mixologists, sommeliers', 'Optimize MVP'] },
+  { period: 'Q4.2026', items: ['Launch in California', 'Add experiential entertainment', 'Onboard initial enterprise partners'] },
+  { period: 'Q1.2027', items: ['Optimize paid marketing campaigns', 'Soft launch premium hospitality professional subscription', 'Deploy agentic AI MVP'] },
+  { period: 'Q2.2027', items: ['Launch in Texas', 'Officially launch premium hospitality professional subscription', 'Deploy agentic AI MMP'] },
+];
+---
+
+<section class="py-28 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Desktop grid -->
+    <div class="hidden sm:block">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-5 mb-5" data-stagger>
+        {quarters.slice(0, 3).map((q) => (
+          <div class="card-burgundy fade-up relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-bright to-red opacity-50"></div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-4" style="font-family: var(--font-heading);">{q.period}</h3>
+            <ul class="space-y-2">
+              {q.items.map((item) => (
+                <li class="flex items-start gap-2 text-white/80 text-xs sm:text-sm" style="font-family: var(--font-body);">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-bright flex-shrink-0"></span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="grid grid-cols-2 gap-5 max-w-4xl mx-auto" data-stagger>
+        {quarters.slice(3).map((q) => (
+          <div class="card-burgundy fade-up relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-bright to-red opacity-50"></div>
+            <h3 class="text-xl sm:text-2xl font-bold mb-4" style="font-family: var(--font-heading);">{q.period}</h3>
+            <ul class="space-y-2">
+              {q.items.map((item) => (
+                <li class="flex items-start gap-2 text-white/80 text-xs sm:text-sm" style="font-family: var(--font-body);">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-bright flex-shrink-0"></span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile swiper -->
+    <div class="sm:hidden fade-up">
+      <div class="swiper roadmap-swiper">
+        <div class="swiper-wrapper">
+          {quarters.map((q) => (
+            <div class="swiper-slide">
+              <div class="card-burgundy relative overflow-hidden mx-1 min-h-[240px]">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-bright to-red opacity-50"></div>
+                <h3 class="text-2xl font-bold mb-4" style="font-family: var(--font-heading);">{q.period}</h3>
+                <ul class="space-y-2">
+                  {q.items.map((item) => (
+                    <li class="flex items-start gap-2 text-white/80 text-xs" style="font-family: var(--font-body);">
+                      <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-bright flex-shrink-0"></span>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.roadmap-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 8,
+        centeredSlides: true,
+        pagination: { el: '.roadmap-swiper .swiper-pagination', clickable: true },
+      });
+    }
+  });
+</script>
+
+<style>
+  .roadmap-swiper .swiper-pagination-bullet { background: var(--color-burgundy); opacity: 0.3; }
+  .roadmap-swiper .swiper-pagination-bullet-active { background: var(--color-red); opacity: 1; }
+</style>

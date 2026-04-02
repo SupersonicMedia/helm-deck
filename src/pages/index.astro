@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Challenge from '../components/Challenge.astro';
+import AIPowered from '../components/AIPowered.astro';
+import WhyHelm from '../components/WhyHelm.astro';
+import ProductExperience from '../components/ProductExperience.astro';
+import MarketOpportunity from '../components/MarketOpportunity.astro';
+import Founders from '../components/Founders.astro';
+import OperatingTeam from '../components/OperatingTeam.astro';
+import RevenueStreams from '../components/RevenueStreams.astro';
+import Economics from '../components/Economics.astro';
+import SubscriptionEconomics from '../components/SubscriptionEconomics.astro';
+import EventScenarios from '../components/EventScenarios.astro';
+import GoToMarket from '../components/GoToMarket.astro';
+import Roadmap from '../components/Roadmap.astro';
+import UseOfFunds from '../components/UseOfFunds.astro';
+import Video from '../components/Video.astro';
+import ThankYou from '../components/ThankYou.astro';
+import Footer from '../components/Footer.astro';
+import DeckNav from '../components/DeckNav.astro';
+---
+
+<Layout>
+  <Header />
+  <main>
+    <div id="hero"><Hero /></div>
+    <div id="challenge"><Challenge /></div>
+    <div id="solution"><AIPowered /></div>
+    <div id="why"><WhyHelm /></div>
+    <div id="product"><ProductExperience /></div>
+    <div id="market">
+      <MarketOpportunity />
+    </div>
+    <div id="team">
+      <Founders />
+      <OperatingTeam />
+    </div>
+    <div id="revenue">
+      <RevenueStreams />
+      <Economics />
+      <div id="economics">
+        <SubscriptionEconomics />
+      </div>
+      <EventScenarios />
+    </div>
+    <div id="gtm"><GoToMarket /></div>
+    <div id="roadmap">
+      <Roadmap />
+      <UseOfFunds />
+    </div>
+    <Video />
+    <ThankYou />
+  </main>
+  <Footer />
+  <DeckNav />
+</Layout>

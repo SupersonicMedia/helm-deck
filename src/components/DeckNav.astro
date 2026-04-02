@@ -1,0 +1,132 @@
+---
+const sections = [
+  { id: 'hero', label: 'HELM' },
+  { id: 'challenge', label: 'Challenge' },
+  { id: 'solution', label: 'Solution' },
+  { id: 'why', label: 'Why HELM' },
+  { id: 'product', label: 'Product' },
+  { id: 'market', label: 'Market' },
+  { id: 'team', label: 'Team' },
+  { id: 'revenue', label: 'Revenue' },
+  { id: 'economics', label: 'Economics' },
+  { id: 'gtm', label: 'GTM' },
+  { id: 'roadmap', label: 'Roadmap' },
+];
+---
+
+<nav id="deck-nav" class="fixed bottom-0 left-0 right-0 z-50 pointer-events-none opacity-0 transition-opacity duration-500">
+  <div class="max-w-lg mx-auto px-4 pb-5">
+    <div class="pointer-events-auto bg-burgundy-dark/80 backdrop-blur-xl border border-white/10 rounded-full px-3 py-2 flex items-center justify-between shadow-2xl">
+      <!-- Prev arrow -->
+      <button id="deck-prev" class="w-10 h-10 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all duration-200 active:scale-90" aria-label="Previous section">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Section indicator -->
+      <div class="flex-1 text-center min-w-0 px-2">
+        <p id="deck-label" class="text-white text-xs font-semibold tracking-widest uppercase truncate" style="font-family: var(--font-body);">
+          HELM
+        </p>
+        <div class="flex justify-center gap-1 mt-1.5">
+          {sections.map((_, i) => (
+            <div class="deck-dot w-1.5 h-1.5 rounded-full bg-white/20 transition-all duration-300" data-index={i}></div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Next arrow -->
+      <button id="deck-next" class="w-10 h-10 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all duration-200 active:scale-90" aria-label="Next section">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script define:vars={{ sections }}>
+  let currentIndex = 0;
+  const nav = document.getElementById('deck-nav');
+  const label = document.getElementById('deck-label');
+  const dots = document.querySelectorAll('.deck-dot');
+  const prevBtn = document.getElementById('deck-prev');
+  const nextBtn = document.getElementById('deck-next');
+
+  // Show nav after initial scroll
+  let navShown = false;
+  window.addEventListener('scroll', () => {
+    if (!navShown && window.scrollY > 200) {
+      nav.classList.remove('opacity-0');
+      nav.classList.add('opacity-100');
+      navShown = true;
+    }
+  }, { passive: true });
+
+  // Track current section via IntersectionObserver
+  const sectionEls = sections.map(s => document.getElementById(s.id)).filter(Boolean);
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idx = sectionEls.indexOf(entry.target);
+          if (idx !== -1) {
+            currentIndex = idx;
+            updateNav();
+          }
+        }
+      });
+    },
+    { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' }
+  );
+
+  sectionEls.forEach((el) => {
+    if (el) sectionObserver.observe(el);
+  });
+
+  function updateNav() {
+    if (label) label.textContent = sections[currentIndex].label;
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.remove('bg-white/20', 'w-1.5');
+        dot.classList.add('bg-red-bright', 'w-4');
+      } else {
+        dot.classList.remove('bg-red-bright', 'w-4');
+        dot.classList.add('bg-white/20', 'w-1.5');
+      }
+    });
+  }
+
+  // Arrow navigation
+  prevBtn?.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      const el = document.getElementById(sections[currentIndex].id);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      updateNav();
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentIndex < sections.length - 1) {
+      currentIndex++;
+      const el = document.getElementById(sections[currentIndex].id);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      updateNav();
+    }
+  });
+
+  // Initial state
+  updateNav();
+</script>
+
+<style>
+  .deck-dot {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #deck-nav {
+    -webkit-backdrop-filter: blur(20px);
+  }
+</style>
