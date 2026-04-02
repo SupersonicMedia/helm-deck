@@ -2,64 +2,37 @@
 const heroImages = Array.from({ length: 9 }, (_, i) => `/images/hero-${i + 1}.jpg`);
 ---
 
-<section class="min-h-[90vh] flex flex-col items-center justify-center px-4 sm:px-6 py-16 md:py-24 relative">
-  <!-- Subtle background monogram watermark -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.04]">
-    <img src="/images/helm-submark-burgundy.png" alt="" class="w-[500px] h-auto" />
+<section class="px-5 h-full flex flex-col items-center justify-center gap-6 pb-12">
+  <img src="/images/helm-logo-burgundy.png" alt="HELM" class="w-full max-w-[90vw] sm:max-w-md md:max-w-lg lg:max-w-xl h-auto" />
+
+  <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center gap-1.5">
+      <span class="pill text-xs sm:text-sm px-6 py-2 whitespace-nowrap">Luxury Hospitality Marketplace</span>
+      <span class="text-burgundy text-sm font-light">+</span>
+      <span class="pill-red text-xs sm:text-sm px-6 py-2 whitespace-nowrap">Agentic AI Event Planner</span>
+    </div>
+
+    <p class="text-center text-xs sm:text-base md:text-lg text-charcoal/70 leading-relaxed" style="font-family: var(--font-body);">
+      Book premium event talent and services like Airbnb. Our AI agent plans, coordinates, and executes the entire workflow.
+    </p>
   </div>
 
-  <!-- HELM Logo (real PNG) -->
-  <div class="text-center mb-8 md:mb-10 fade-up relative z-10">
-    <img
-      src="/images/helm-logo-burgundy.png"
-      alt="HELM - Hospitality Exchange Luxury Marketplace"
-      class="h-24 sm:h-32 md:h-44 lg:h-56 w-auto mx-auto"
-    />
-  </div>
-
-  <!-- Pill badges with glass container -->
-  <div class="glass-strong px-4 sm:px-8 py-3 sm:py-4 mb-8 md:mb-10 fade-up relative z-10">
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-      <span class="pill text-xs sm:text-sm md:text-base">Luxury Hospitality Marketplace</span>
-      <span class="text-burgundy text-xl sm:text-2xl font-light hidden sm:inline">+</span>
-      <span class="pill-red text-xs sm:text-sm md:text-base">Agentic AI Event Planner</span>
+  <div class="w-screen overflow-hidden -mx-5">
+    <div class="hero-marquee flex gap-3">
+      {[...heroImages, ...heroImages].map((src) => (
+        <img src={src} alt="HELM hospitality" loading="lazy" class="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-xl shadow-lg flex-shrink-0" />
+      ))}
     </div>
   </div>
-
-  <!-- Tagline -->
-  <p class="text-center text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mb-14 md:mb-20 text-charcoal/80 leading-relaxed px-4 fade-up relative z-10" style="font-family: var(--font-body);">
-    Book premium event talent and services like Airbnb. Our AI agent plans, coordinates, and executes the entire workflow.
-  </p>
-
-  <!-- Photo strip swiper -->
-  <div class="w-full fade-up relative z-10">
-    <div class="swiper hero-swiper">
-      <div class="swiper-wrapper">
-        {heroImages.map((src) => (
-          <div class="swiper-slide" style="width: auto;">
-            <img src={src} alt="HELM hospitality" loading="lazy" class="w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-xl shadow-lg" />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <!-- Red accent line -->
-  <div class="w-20 h-1 bg-gradient-to-r from-red to-burgundy rounded-full mt-12 md:mt-16 fade-up"></div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (typeof Swiper !== 'undefined') {
-      new Swiper('.hero-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 12,
-        freeMode: true,
-        loop: true,
-        autoplay: { delay: 0, disableOnInteraction: false },
-        speed: 4000,
-        allowTouchMove: true,
-      });
-    }
-  });
-</script>
+<style>
+  .hero-marquee {
+    animation: marquee 25s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

@@ -1,48 +1,32 @@
----
-const allocations = [
-  { category: 'R&D/Product Development', amount: '$1,074,591.44', pct: '19.19%' },
-  { category: 'Sales and Marketing', amount: '$2,258,584.76', pct: '40.33%' },
-  { category: 'General and Administrative', amount: '$1,737,728.13', pct: '31.03%' },
-  { category: 'COGs', amount: '$529,095.67', pct: '9.45%' },
-];
----
-
-<section class="py-28 px-4 sm:px-6">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-3 fade-up">
-      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-8 w-auto mx-auto" />
+<section class="px-5 h-full flex flex-col justify-center pb-14">
+  <div class="max-w-3xl mx-auto w-full">
+    <div class="text-center mb-1">
+      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
     </div>
-    <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-8 fade-up">
-      Use of Funds
-    </h2>
-
-    <div class="text-center mb-12 fade-up">
-      <span class="pill-red text-base sm:text-lg">TOTAL RAISE: $5,600,000.00</span>
+    <h2 class="section-heading text-2xl sm:text-4xl text-center mb-3">Use of Funds</h2>
+    <div class="text-center mb-4">
+      <span class="pill-red text-xs sm:text-base">TOTAL RAISE: $5,600,000</span>
     </div>
-
-    <div class="fade-up glass-strong p-4 sm:p-8 overflow-x-auto">
-      <table class="w-full border-collapse min-w-[450px]" style="font-family: var(--font-body);">
+    <div class="glass-strong p-3 sm:p-5">
+      <table class="w-full border-collapse" style="font-family: var(--font-body);">
         <thead>
           <tr>
-            <th class="py-3 px-4 sm:px-6 text-left text-sm font-bold text-burgundy border-b-2 border-burgundy">Budget Allocation</th>
-            <th class="py-3 px-4 sm:px-6 text-center text-sm font-bold text-burgundy border-b-2 border-burgundy">Amount</th>
-            <th class="py-3 px-4 sm:px-6 text-center text-sm font-bold text-burgundy border-b-2 border-burgundy">%Total</th>
+            <th class="py-2 px-2 sm:px-4 text-left text-[10px] sm:text-xs font-bold text-burgundy border-b-2 border-burgundy">Allocation</th>
+            <th class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs font-bold text-burgundy border-b-2 border-burgundy">Amount</th>
+            <th class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs font-bold text-burgundy border-b-2 border-burgundy">%</th>
           </tr>
         </thead>
         <tbody>
-          {allocations.map((row, i) => (
-            <tr class={`transition-colors hover:bg-burgundy/5 ${i % 2 === 0 ? 'bg-white/20' : ''}`}>
-              <td class="py-3 px-4 sm:px-6 text-sm border-b border-charcoal/10">{row.category}</td>
-              <td class="py-3 px-4 sm:px-6 text-center text-sm border-b border-charcoal/10">{row.amount}</td>
-              <td class="py-3 px-4 sm:px-6 text-center text-sm border-b border-charcoal/10">{row.pct}</td>
-            </tr>
-          ))}
+          <tr class="bg-white/20"><td class="py-2 px-2 sm:px-4 text-[10px] sm:text-xs border-b border-charcoal/10">R&D/Product Development</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">$1,074,591</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">19.19%</td></tr>
+          <tr><td class="py-2 px-2 sm:px-4 text-[10px] sm:text-xs border-b border-charcoal/10">Sales and Marketing</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">$2,258,585</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">40.33%</td></tr>
+          <tr class="bg-white/20"><td class="py-2 px-2 sm:px-4 text-[10px] sm:text-xs border-b border-charcoal/10">General and Administrative</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">$1,737,728</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">31.03%</td></tr>
+          <tr><td class="py-2 px-2 sm:px-4 text-[10px] sm:text-xs border-b border-charcoal/10">COGs</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">$529,096</td><td class="py-2 px-2 sm:px-4 text-right text-[10px] sm:text-xs border-b border-charcoal/10">9.45%</td></tr>
         </tbody>
         <tfoot>
           <tr>
-            <td class="py-4 px-4 sm:px-6 font-bold text-burgundy text-sm border-t-2 border-burgundy">TOTAL</td>
-            <td class="py-4 px-4 sm:px-6 text-center font-bold text-red text-sm border-t-2 border-burgundy">$5,600,000.00</td>
-            <td class="py-4 px-4 sm:px-6 text-center font-bold text-red text-sm border-t-2 border-burgundy">100.00%</td>
+            <td class="py-2.5 px-2 sm:px-4 font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy">TOTAL</td>
+            <td class="py-2.5 px-2 sm:px-4 text-right font-bold text-red text-[10px] sm:text-xs border-t-2 border-burgundy">$5,600,000</td>
+            <td class="py-2.5 px-2 sm:px-4 text-right font-bold text-red text-[10px] sm:text-xs border-t-2 border-burgundy">100%</td>
           </tr>
         </tfoot>
       </table>

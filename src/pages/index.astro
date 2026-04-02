@@ -18,41 +18,29 @@ import Roadmap from '../components/Roadmap.astro';
 import UseOfFunds from '../components/UseOfFunds.astro';
 import Video from '../components/Video.astro';
 import ThankYou from '../components/ThankYou.astro';
-import Footer from '../components/Footer.astro';
 import DeckNav from '../components/DeckNav.astro';
 ---
 
 <Layout>
   <Header />
-  <main>
-    <div id="hero"><Hero /></div>
-    <div id="challenge"><Challenge /></div>
-    <div id="solution"><AIPowered /></div>
-    <div id="why"><WhyHelm /></div>
-    <div id="product"><ProductExperience /></div>
-    <div id="market">
-      <MarketOpportunity />
-    </div>
-    <div id="team">
-      <Founders />
-      <OperatingTeam />
-    </div>
-    <div id="revenue">
-      <RevenueStreams />
-      <Economics />
-      <div id="economics">
-        <SubscriptionEconomics />
-      </div>
-      <EventScenarios />
-    </div>
-    <div id="gtm"><GoToMarket /></div>
-    <div id="roadmap">
-      <Roadmap />
-      <UseOfFunds />
-    </div>
-    <Video />
-    <ThankYou />
+  <main id="deck" class="deck-container">
+    <div class="deck-slide" id="slide-0" data-label="HELM"><Hero /></div>
+    <div class="deck-slide" id="slide-1" data-label="Challenge"><Challenge /></div>
+    <div class="deck-slide" id="slide-2" data-label="Solution"><AIPowered /></div>
+    <div class="deck-slide" id="slide-3" data-label="Why HELM"><WhyHelm /></div>
+    <div class="deck-slide" id="slide-4" data-label="Product"><ProductExperience /></div>
+    <div class="deck-slide" id="slide-5" data-label="Market"><MarketOpportunity /></div>
+    <div class="deck-slide" id="slide-6" data-label="Founders"><Founders /></div>
+    <div class="deck-slide" id="slide-7" data-label="Team"><OperatingTeam /></div>
+    <div class="deck-slide" id="slide-8" data-label="Revenue"><RevenueStreams /></div>
+    <div class="deck-slide" id="slide-9" data-label="Growth Model"><Economics /></div>
+    <div class="deck-slide" id="slide-10" data-label="Subscriptions"><SubscriptionEconomics /></div>
+    <div class="deck-slide" id="slide-11" data-label="Events"><EventScenarios /></div>
+    <div class="deck-slide" id="slide-12" data-label="GTM"><GoToMarket /></div>
+    <div class="deck-slide" id="slide-13" data-label="Roadmap"><Roadmap /></div>
+    <div class="deck-slide" id="slide-14" data-label="Funds"><UseOfFunds /></div>
+    <div class="deck-slide" id="slide-15" data-label="Video"><Video /></div>
+    <div class="deck-slide" id="slide-16" data-label="Thank You"><ThankYou /></div>
   </main>
-  <Footer />
   <DeckNav />
 </Layout>
