@@ -10,7 +10,7 @@ const totalSlides = 17;
       </button>
 
       <div class="flex-1 text-center min-w-0 px-1">
-        <p id="deck-label" class="text-white text-[10px] font-bold tracking-[0.2em] uppercase truncate" style="font-family: var(--font-body);">HELM</p>
+        <p class="text-white text-[10px] font-bold tracking-[0.2em] uppercase truncate" style="font-family: var(--font-body);"><span id="deck-label">HELM</span> <span id="deck-number" class="text-white/40 font-normal tracking-normal">1/17</span></p>
         <div class="flex justify-center gap-[3px] mt-1">
           {Array.from({ length: totalSlides }).map((_, i) => (
             <div class="deck-dot" data-index={i}></div>
@@ -29,6 +29,7 @@ const totalSlides = 17;
   const deck = document.getElementById('deck');
   const slides = document.querySelectorAll('.deck-slide');
   const label = document.getElementById('deck-label');
+  const numberEl = document.getElementById('deck-number');
   const dots = document.querySelectorAll('.deck-dot');
   const prevBtn = document.getElementById('deck-prev');
   const nextBtn = document.getElementById('deck-next');
@@ -39,6 +40,9 @@ const totalSlides = 17;
     const slide = slides[index];
     if (label && slide) {
       label.textContent = slide.dataset.label || '';
+    }
+    if (numberEl) {
+      numberEl.textContent = (index + 1) + '/' + slides.length;
     }
     dots.forEach((dot, i) => {
       const el = dot as HTMLElement;
