@@ -3,26 +3,47 @@ const topPhotos = Array.from({ length: 6 }, (_, i) => `/images/thankyou-${i + 1}
 const bottomPhotos = Array.from({ length: 6 }, (_, i) => `/images/thankyou-${i + 7}.jpg`);
 ---
 
-<section class="px-5 h-full flex flex-col items-center justify-center pb-14">
-  <div class="max-w-5xl mx-auto w-full">
-    <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 sm:gap-2 mb-4">
-      {topPhotos.map((src) => (
-        <img src={src} alt="HELM hospitality" class="w-full aspect-square object-cover rounded-lg shadow-md" loading="lazy" />
+<section class="h-full flex flex-col items-center justify-center pb-14 overflow-hidden">
+  <div class="w-screen overflow-hidden">
+    <div class="thankyou-marquee-left flex gap-3">
+      {[...topPhotos, ...topPhotos].map((src) => (
+        <img src={src} alt="HELM hospitality" loading="lazy" class="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-xl shadow-lg flex-shrink-0" />
       ))}
     </div>
+  </div>
 
-    <div class="text-center py-3 sm:py-6 relative">
-      <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-        <img src="/images/helm-submark-burgundy.png" alt="" class="h-40 sm:h-64 w-auto" />
-      </div>
-      <h2 class="section-heading text-4xl sm:text-6xl md:text-7xl relative z-10">Thank You</h2>
-      <div class="w-16 h-0.5 bg-gradient-to-r from-red to-burgundy mx-auto mt-3 rounded-full"></div>
+  <div class="text-center py-10 sm:py-14 relative px-5">
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+      <img src="/images/helm-submark-burgundy.png" alt="" class="h-72 sm:h-96 w-auto" />
     </div>
+    <h2 class="section-heading text-6xl sm:text-7xl md:text-8xl relative z-10">Thank You</h2>
+    <div class="w-16 h-0.5 bg-gradient-to-r from-red to-burgundy mx-auto mt-5 rounded-full"></div>
+  </div>
 
-    <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 sm:gap-2 mt-4">
-      {bottomPhotos.map((src) => (
-        <img src={src} alt="HELM hospitality" class="w-full aspect-square object-cover rounded-lg shadow-md" loading="lazy" />
+  <div class="w-screen overflow-hidden">
+    <div class="thankyou-marquee-right flex gap-3">
+      {[...bottomPhotos, ...bottomPhotos].map((src) => (
+        <img src={src} alt="HELM hospitality" loading="lazy" class="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-xl shadow-lg flex-shrink-0" />
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  .thankyou-marquee-left {
+    animation: marquee-left 25s linear infinite;
+    width: max-content;
+  }
+  .thankyou-marquee-right {
+    animation: marquee-right 25s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+</style>
