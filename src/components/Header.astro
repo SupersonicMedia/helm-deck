@@ -1,7 +1,7 @@
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="bg-gradient-to-r from-burgundy-dark via-burgundy to-burgundy-dark backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center h-14">
-      <a href="#hero" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="flex-shrink-0">
+      <a href="#hero" onclick="var d=document.getElementById('deck');if(d){d.scrollTo({top:0,behavior:'smooth'})}else{window.scrollTo({top:0,behavior:'smooth'})};return false;" class="flex-shrink-0 cursor-pointer">
         <img
           src="/images/helm-submark-white.png"
           alt="HELM"

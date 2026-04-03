@@ -12,12 +12,12 @@ const kpis = [
 
 <section class="px-5 h-full flex flex-col justify-center pb-14">
   <div class="max-w-3xl mx-auto w-full">
-    <div class="text-center mb-1">
+    <div class="text-center mb-1 econ-animate" style="--delay: 0s;">
       <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
     </div>
-    <h2 class="section-heading text-2xl sm:text-4xl text-center mb-4">Projected Growth Model</h2>
+    <h2 class="section-heading text-2xl sm:text-4xl text-center mb-4 econ-animate" style="--delay: 0.15s;">Projected Growth Model</h2>
 
-    <div class="glass-strong p-3 sm:p-5">
+    <div class="glass-strong p-3 sm:p-5 econ-animate" style="--delay: 0.3s;">
       <table class="w-full border-collapse" style="font-family: var(--font-body);">
         <thead>
           <tr>
@@ -29,7 +29,7 @@ const kpis = [
         </thead>
         <tbody>
           {kpis.map((row, i) => (
-            <tr class={`${i % 2 === 0 ? 'bg-white/20' : 'bg-white/5'}`}>
+            <tr class={`econ-row ${i % 2 === 0 ? 'bg-white/20' : 'bg-white/5'}`} style={`--delay: ${0.45 + i * 0.1}s;`}>
               <td class="py-1.5 px-2 sm:px-4 font-bold text-[10px] sm:text-xs border-b border-burgundy/10">{row.metric}</td>
               <td class="py-1.5 px-2 sm:px-4 text-center text-[10px] sm:text-xs border-b border-burgundy/10">{row.y2026}</td>
               <td class="py-1.5 px-2 sm:px-4 text-center text-[10px] sm:text-xs border-b border-burgundy/10">{row.y2027}</td>
@@ -40,7 +40,7 @@ const kpis = [
           ))}
         </tbody>
         <tfoot>
-          <tr class="bg-burgundy/10">
+          <tr class="bg-burgundy/10 econ-row" style="--delay: 1.15s;">
             <td class="py-2 px-2 sm:px-4 font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">GROSS PROFIT</td>
             <td class="py-2 px-2 sm:px-4 text-center font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">$338,650.03</td>
             <td class="py-2 px-2 sm:px-4 text-center font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">$6,394,002.23</td>
@@ -52,11 +52,24 @@ const kpis = [
       </table>
     </div>
 
-    <div class="text-center mt-4">
+    <div class="text-center mt-4 econ-animate" style="--delay: 1.3s;">
       <a href="#" class="pill-red text-xs sm:text-sm px-8 py-2.5 inline-block">Learn More</a>
     </div>
   </div>
 </section>
+
+<style>
+  .econ-animate, .econ-row {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--delay, 0s);
+  }
+  .econ-animate.visible, .econ-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 
 <script is:inline>
   (function() {
@@ -78,7 +91,7 @@ const kpis = [
           var progress = Math.min(elapsed / duration, 1);
           var eased = 1 - Math.pow(1 - progress, 3);
           var current = Math.round(eased * target);
-          el.textContent = (current > 0 ? '' : '') + current + suffix;
+          el.textContent = current + suffix;
           if (progress < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
@@ -87,11 +100,16 @@ const kpis = [
 
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
+        var els = slide.querySelectorAll('.econ-animate, .econ-row');
         if (entry.isIntersecting) {
+          els.forEach(function(el) { el.classList.add('visible'); });
           animateYOY();
+        } else {
+          els.forEach(function(el) { el.classList.remove('visible'); });
+          animated = false;
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     observer.observe(slide);
   })();
