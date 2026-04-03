@@ -1,12 +1,12 @@
 ---
 const kpis = [
-  { metric: 'Bookings', y2026: '5,226', y2027: '18,432', yoy: '253%' },
-  { metric: 'CAC', y2026: '$158.58', y2027: '$101.69', yoy: '-36%' },
-  { metric: 'Revenue', y2026: '$1,167,400.03', y2027: '$8,268,377.23', yoy: '608%' },
-  { metric: 'Active Users', y2026: '9,207', y2027: '35,766', yoy: '288%' },
-  { metric: 'ARPU/Mo', y2026: '$126.79', y2027: '$231.18', yoy: '82%' },
-  { metric: 'LTV', y2026: '$3,169.78', y2027: '$3,853.04', yoy: '22%' },
-  { metric: 'LTV:CAC', y2026: '$19.99', y2027: '$37.89', yoy: '90%' },
+  { metric: 'Bookings', y2026: '5,226', y2027: '18,432', yoy: '253%', yoyNum: 253 },
+  { metric: 'CAC', y2026: '$158.58', y2027: '$101.69', yoy: '-36%', yoyNum: -36 },
+  { metric: 'Revenue', y2026: '$1,167,400.03', y2027: '$8,268,377.23', yoy: '608%', yoyNum: 608 },
+  { metric: 'Active Users', y2026: '9,207', y2027: '35,766', yoy: '288%', yoyNum: 288 },
+  { metric: 'ARPU/Mo', y2026: '$126.79', y2027: '$231.18', yoy: '82%', yoyNum: 82 },
+  { metric: 'LTV', y2026: '$3,169.78', y2027: '$3,853.04', yoy: '22%', yoyNum: 22 },
+  { metric: 'LTV:CAC', y2026: '$19.99', y2027: '$37.89', yoy: '90%', yoyNum: 90 },
 ];
 ---
 
@@ -34,20 +34,65 @@ const kpis = [
               <td class="py-1.5 px-2 sm:px-4 text-center text-[10px] sm:text-xs border-b border-burgundy/10">{row.y2026}</td>
               <td class="py-1.5 px-2 sm:px-4 text-center text-[10px] sm:text-xs border-b border-burgundy/10">{row.y2027}</td>
               <td class="py-1.5 px-2 sm:px-4 text-center text-[10px] sm:text-xs font-semibold border-b border-burgundy/10">
-                <span class={row.yoy.startsWith('-') ? 'text-green-700' : 'text-red-accent'}>{row.yoy}</span>
+                <span class="econ-yoy" data-target={row.yoyNum} data-suffix="%">{row.yoy}</span>
               </td>
             </tr>
           ))}
         </tbody>
         <tfoot>
-          <tr class="bg-cream-dark/30">
+          <tr class="bg-burgundy/10">
             <td class="py-2 px-2 sm:px-4 font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">GROSS PROFIT</td>
             <td class="py-2 px-2 sm:px-4 text-center font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">$338,650.03</td>
-            <td class="py-2 px-2 sm:px-4 text-center font-bold text-red text-[10px] sm:text-xs border-t-2 border-burgundy/30">$6,394,002.23</td>
-            <td class="py-2 px-2 sm:px-4 text-center font-bold text-red text-sm sm:text-base border-t-2 border-burgundy/30">1788%</td>
+            <td class="py-2 px-2 sm:px-4 text-center font-bold text-burgundy text-[10px] sm:text-xs border-t-2 border-burgundy/30">$6,394,002.23</td>
+            <td class="py-2 px-2 sm:px-4 text-center font-bold text-burgundy text-sm sm:text-base border-t-2 border-burgundy/30">
+              <span class="econ-yoy" data-target="1788" data-suffix="%">1788%</span>
+            </td>
           </tr>
         </tfoot>
       </table>
     </div>
+
+    <div class="text-center mt-4">
+      <a href="#" class="pill-red text-xs sm:text-sm px-8 py-2.5 inline-block">Learn More</a>
+    </div>
   </div>
 </section>
+
+<script is:inline>
+  (function() {
+    var slide = document.getElementById('slide-9');
+    if (!slide) return;
+    var animated = false;
+
+    function animateYOY() {
+      if (animated) return;
+      animated = true;
+      var els = slide.querySelectorAll('.econ-yoy');
+      els.forEach(function(el) {
+        var target = parseInt(el.dataset.target);
+        var suffix = el.dataset.suffix || '';
+        var duration = 2000;
+        var start = performance.now();
+        function tick(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = (current > 0 ? '' : '') + current + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateYOY();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(slide);
+  })();
+</script>

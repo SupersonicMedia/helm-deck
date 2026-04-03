@@ -5,7 +5,7 @@
     </div>
     <h2 class="section-heading text-2xl sm:text-4xl text-center mb-4 sm:mb-6">Massive Market Opportunity</h2>
 
-    <div class="grid grid-cols-2 gap-2 mb-4">
+    <div class="grid grid-cols-2 gap-2 mb-3">
       <div class="glass-strong p-3 text-center">
         <p class="text-xl sm:text-3xl font-bold text-burgundy counter" data-target="471" data-prefix="$" data-suffix="B" style="font-family: var(--font-heading);">$0B</p>
         <p class="text-[9px] sm:text-xs text-charcoal/50 mt-0.5" style="font-family: var(--font-body);">US Market by 2033</p>
@@ -16,51 +16,109 @@
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-4 md:gap-8">
-      <div class="grid grid-cols-2 gap-3">
-        <div class="glass-strong p-3">
-          <h4 class="text-center font-bold tracking-widest text-[8px] mb-3 text-charcoal/40" style="font-family: var(--font-body);">US MARKET</h4>
-          <div class="flex items-end justify-center gap-6 h-20 sm:h-32">
-            <div class="flex flex-col items-center">
-              <span class="text-[9px] sm:text-xs font-bold mb-1">$285B</span>
-              <div class="w-10 sm:w-14 bg-gradient-to-t from-burgundy-dark to-burgundy rounded-t-sm" style="height: 50px;"></div>
-              <span class="text-[8px] mt-1 text-charcoal/40">2024</span>
+    <div class="grid grid-cols-2 gap-3 mb-3">
+      <!-- US Market Chart -->
+      <div class="glass-strong p-4 pb-2">
+        <h4 class="text-center font-bold tracking-widest text-[8px] mb-3 text-charcoal/40" style="font-family: var(--font-body);">US MARKET</h4>
+        <div class="flex items-end justify-center gap-6" style="height: 120px;">
+          <div class="flex flex-col items-center">
+            <div class="market-bar w-12 sm:w-16 bg-gradient-to-t from-burgundy-dark to-burgundy rounded-t-sm flex items-start justify-center pt-1 overflow-hidden" data-height="60">
+              <span class="market-bar-label text-[8px] sm:text-[10px] font-bold text-white/90">$285B</span>
             </div>
-            <div class="flex flex-col items-center">
-              <span class="text-[9px] sm:text-xs font-bold text-red-accent mb-1">$471B</span>
-              <div class="w-10 sm:w-14 bg-gradient-to-t from-red to-burgundy rounded-t-sm" style="height: 83px;"></div>
-              <span class="text-[8px] mt-1 text-charcoal/40">2033</span>
-            </div>
+            <span class="text-[8px] mt-1 text-charcoal/40">2024</span>
           </div>
-        </div>
-        <div class="glass-strong p-3">
-          <h4 class="text-center font-bold tracking-widest text-[8px] mb-3 text-charcoal/40" style="font-family: var(--font-body);">GLOBAL MARKET</h4>
-          <div class="flex items-end justify-center gap-6 h-20 sm:h-32">
-            <div class="flex flex-col items-center">
-              <span class="text-[9px] sm:text-xs font-bold mb-1">$1.16T</span>
-              <div class="w-10 sm:w-14 bg-gradient-to-t from-burgundy-dark to-burgundy rounded-t-sm" style="height: 46px;"></div>
-              <span class="text-[8px] mt-1 text-charcoal/40">2024</span>
+          <div class="flex flex-col items-center">
+            <div class="market-bar w-12 sm:w-16 bg-gradient-to-t from-red to-burgundy rounded-t-sm flex items-start justify-center pt-1 overflow-hidden" data-height="100">
+              <span class="market-bar-label text-[8px] sm:text-[10px] font-bold text-white">$471B</span>
             </div>
-            <div class="flex flex-col items-center">
-              <span class="text-[9px] sm:text-xs font-bold text-red-accent mb-1">$2.09T</span>
-              <div class="w-10 sm:w-14 bg-gradient-to-t from-red to-burgundy rounded-t-sm" style="height: 84px;"></div>
-              <span class="text-[8px] mt-1 text-charcoal/40">2033</span>
-            </div>
+            <span class="text-[8px] mt-1 text-charcoal/40">2033</span>
           </div>
         </div>
       </div>
-      <div class="space-y-3">
-        <div class="glass-dark p-3 card-red-accent">
-          <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
-            The U.S. event management market stands at <strong>$285B in 2024</strong>, projected to reach <span class="text-red-accent">$471B by 2033</span>. Globally, valued at <strong>$1.16T</strong>, growing to <span class="text-red-accent">$2.09T</span>.
-          </p>
+
+      <!-- Global Market Chart -->
+      <div class="glass-strong p-4 pb-2">
+        <h4 class="text-center font-bold tracking-widest text-[8px] mb-3 text-charcoal/40" style="font-family: var(--font-body);">GLOBAL MARKET</h4>
+        <div class="flex items-end justify-center gap-6" style="height: 120px;">
+          <div class="flex flex-col items-center">
+            <div class="market-bar w-12 sm:w-16 bg-gradient-to-t from-burgundy-dark to-burgundy rounded-t-sm flex items-start justify-center pt-1 overflow-hidden" data-height="55">
+              <span class="market-bar-label text-[8px] sm:text-[10px] font-bold text-white/90">$1.16T</span>
+            </div>
+            <span class="text-[8px] mt-1 text-charcoal/40">2024</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="market-bar w-12 sm:w-16 bg-gradient-to-t from-red to-burgundy rounded-t-sm flex items-start justify-center pt-1 overflow-hidden" data-height="100">
+              <span class="market-bar-label text-[8px] sm:text-[10px] font-bold text-white">$2.09T</span>
+            </div>
+            <span class="text-[8px] mt-1 text-charcoal/40">2033</span>
+          </div>
         </div>
-        <div class="glass-dark p-3 card-red-accent">
-          <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
-            Event management software is experiencing explosive growth&mdash;from <strong>$15.5B in 2024</strong> to <span class="text-red-accent">$34.7B by 2029</span>. HELM targets the premium wedge: corporate and luxury private events, where high spend meets repeat demand and urgent needs.
-          </p>
-        </div>
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <div class="glass-dark p-3 card-red-accent">
+        <p class="text-[10px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
+          The U.S. event management market stands at <strong>$285B in 2024</strong>, projected to reach <span class="text-red-accent">$471B by 2033</span>. Globally, valued at <strong>$1.16T</strong>, growing to <span class="text-red-accent">$2.09T</span>.
+        </p>
+      </div>
+      <div class="glass-dark p-3 card-red-accent">
+        <p class="text-[10px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
+          Event management software is experiencing explosive growth&mdash;from <strong>$15.5B in 2024</strong> to <span class="text-red-accent">$34.7B by 2029</span>. HELM targets the premium wedge: corporate and luxury private events, where high spend meets repeat demand and urgent needs.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .market-bar {
+    height: 0px;
+    transition: height 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .market-bar-label {
+    opacity: 0;
+    transition: opacity 0.5s ease 2s;
+  }
+  .market-bar.animate {
+    /* height set by JS */
+  }
+  .market-bar.animate .market-bar-label {
+    opacity: 1;
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    var bars = document.querySelectorAll('.market-bar');
+    var slide = document.getElementById('slide-5');
+    if (!slide || !bars.length) return;
+
+    function animateBars() {
+      // Reset
+      bars.forEach(function(bar) {
+        bar.style.height = '0px';
+        bar.classList.remove('animate');
+      });
+      // Trigger grow after brief delay
+      setTimeout(function() {
+        bars.forEach(function(bar) {
+          bar.style.height = bar.dataset.height + 'px';
+          bar.classList.add('animate');
+        });
+      }, 100);
+    }
+
+    // Observe when slide comes into view
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateBars();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(slide);
+
+  })();
+</script>
