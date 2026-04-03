@@ -41,6 +41,7 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: calc(100dvh - 56px); /* viewport minus header */
+    margin-top: 56px; /* push below fixed header */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
