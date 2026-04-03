@@ -1,19 +1,41 @@
 <section class="px-5 h-full flex flex-col justify-center pb-14">
-  <div class="max-w-7xl mx-auto w-full">
-    <img src="/images/challenge.jpg" alt="Event planner overwhelmed" class="fade-up rounded-xl shadow-xl w-full object-cover aspect-[2/1] sm:aspect-[16/10] mb-4" loading="lazy" />
-    <p class="section-label fade-up mb-1 text-[10px] sm:text-xs">The Challenge</p>
-    <h2 class="section-heading fade-up text-2xl sm:text-4xl md:text-5xl mb-3">Event Planning is Broken</h2>
-    <div class="space-y-2.5">
-      <div class="glass-dark fade-up p-3 sm:p-5 card-red-accent">
-        <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
-          Premium event planning remains stubbornly manual, fragmented, and expensive. Venue availability and vendor outreach happens across disparate channels&mdash;creating coordination chaos.
-        </p>
-      </div>
-      <div class="glass-dark fade-up p-3 sm:p-5 card-red-accent">
-        <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
-          Staffing quality is wildly inconsistent, yet premium clients demand trust and reliability. Full-service planners often charge <span class="text-red-accent">15&ndash;20%</span> of the entire event budget.
-        </p>
+  <div class="max-w-7xl mx-auto w-full md:grid md:grid-cols-2 md:gap-10 md:items-center">
+    <div class="challenge-img-wrap mb-4 md:mb-0 rounded-xl overflow-hidden shadow-xl fade-up">
+      <img src="/images/challenge.jpg" alt="Event planner overwhelmed" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div>
+      <p class="section-label fade-up mb-1 text-[10px] sm:text-xs">The Challenge</p>
+      <h2 class="section-heading fade-up text-2xl sm:text-4xl md:text-5xl mb-3">Event Planning is Broken</h2>
+      <div class="space-y-2.5">
+        <div class="glass-dark fade-up p-3 sm:p-5 card-red-accent">
+          <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
+            Premium event planning remains stubbornly manual, fragmented, and expensive. Venue availability and vendor outreach happens across disparate channels&mdash;creating coordination chaos.
+          </p>
+        </div>
+        <div class="glass-dark fade-up p-3 sm:p-5 card-red-accent">
+          <p class="text-[11px] sm:text-sm leading-relaxed" style="font-family: var(--font-body);">
+            Staffing quality is wildly inconsistent, yet premium clients demand trust and reliability. Full-service planners often charge <span class="text-red-accent">15&ndash;20%</span> of the entire event budget.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .challenge-img-wrap {
+    aspect-ratio: 2 / 1;
+  }
+  @media (min-width: 640px) {
+    .challenge-img-wrap {
+      aspect-ratio: 16 / 10;
+    }
+  }
+  @media (min-width: 768px) {
+    .challenge-img-wrap {
+      aspect-ratio: unset;
+      height: 100%;
+      max-height: 400px;
+    }
+  }
+</style>

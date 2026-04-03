@@ -1,38 +1,45 @@
 <section class="px-5 h-full flex flex-col justify-center pb-14">
   <div class="max-w-7xl mx-auto w-full">
-    <div class="w-full rounded-xl overflow-hidden mb-3 max-h-[25vh] fade-up">
-      <img src="/images/gtm-nyc.jpg" alt="New York City skyline" class="w-full h-full object-cover" loading="lazy" />
-    </div>
+    <!-- Mobile: stacked / Desktop: side-by-side -->
+    <div class="md:grid md:grid-cols-2 md:gap-10 md:items-center">
+      <!-- Image: full-width on mobile, left column on desktop -->
+      <div class="w-full rounded-xl overflow-hidden mb-3 max-h-[25vh] md:max-h-none md:mb-0 fade-up">
+        <img src="/images/gtm-nyc.jpg" alt="New York City skyline" class="w-full h-full object-cover md:rounded-xl md:aspect-[4/5]" loading="lazy" />
+      </div>
 
-    <div class="text-center mb-1">
-      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
-    </div>
-    <h2 class="section-heading fade-up text-2xl sm:text-4xl text-center mb-3">Go-To-Market + Capital Raise</h2>
+      <!-- Content -->
+      <div>
+        <div class="text-center md:text-left mb-1">
+          <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto md:mx-0" />
+        </div>
+        <h2 class="section-heading fade-up text-2xl sm:text-4xl text-center md:text-left mb-3">Go-To-Market + Capital Raise</h2>
 
-    <div class="text-center mb-3 scale-in">
-      <span class="pill-red text-xs sm:text-base">Raising: $5.6M Seed</span>
-    </div>
+        <div class="text-center md:text-left mb-3 scale-in">
+          <span class="pill-red text-xs sm:text-base">Raising: $5.6M Seed</span>
+        </div>
 
-    <p class="text-[10px] sm:text-xs leading-relaxed mb-3 text-charcoal/70 text-center max-w-xl mx-auto" style="font-family: var(--font-body);">
-      16&ndash;18 months runway to fund agentic AI development, integrations, trust and vetting operations, NYC launch, and scaling into 4 additional primary markets.
-    </p>
+        <p class="text-[10px] sm:text-xs leading-relaxed mb-3 text-charcoal/70 text-center md:text-left" style="font-family: var(--font-body);">
+          16&ndash;18 months runway to fund agentic AI development, integrations, trust and vetting operations, NYC launch, and scaling into 4 additional primary markets.
+        </p>
 
-    <p class="text-[9px] sm:text-xs mb-3 text-charcoal/60 text-center" style="font-family: var(--font-body);">
-      <strong class="text-burgundy">Key Milestones:</strong> MVP development &rarr; Repeatable GTM motion &rarr; MMP deployment &rarr; Multimarket expansion
-    </p>
+        <p class="text-[9px] sm:text-xs mb-3 text-charcoal/60 text-center md:text-left" style="font-family: var(--font-body);">
+          <strong class="text-burgundy">Key Milestones:</strong> MVP development &rarr; Repeatable GTM motion &rarr; MMP deployment &rarr; Multimarket expansion
+        </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-1.5 mb-4">
-      <span class="pill text-[9px] sm:text-xs px-3 py-1">NYC Tri-State</span>
-      <span class="text-burgundy text-xs">&rarr;</span>
-      <span class="pill text-[9px] sm:text-xs px-3 py-1">South Florida</span>
-      <span class="text-burgundy text-xs">&rarr;</span>
-      <span class="pill text-[9px] sm:text-xs px-3 py-1">California</span>
-    </div>
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-1.5 mb-4">
+          <span class="pill text-[9px] sm:text-xs px-3 py-1">NYC Tri-State</span>
+          <span class="text-burgundy text-xs">&rarr;</span>
+          <span class="pill text-[9px] sm:text-xs px-3 py-1">South Florida</span>
+          <span class="text-burgundy text-xs">&rarr;</span>
+          <span class="pill text-[9px] sm:text-xs px-3 py-1">California</span>
+        </div>
 
-    <div class="glass-dark p-3 sm:p-4 card-red-accent max-w-xl mx-auto">
-      <p class="text-[10px] sm:text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
-        We are recruiting a Founding Talent Cohort of elite hospitality professionals (chefs, bartenders, servers, captains, entertainment). Our demand strategy targets corporate buyers (EAs, Office Managers, HR, Operations) and luxury private event clients (estate managers, concierges). Strategic venue and vendor partnerships will drive recurring platform usage and network effects.
-      </p>
+        <div class="glass-dark p-3 sm:p-4 card-red-accent">
+          <p class="text-[10px] sm:text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">
+            We are recruiting a Founding Talent Cohort of elite hospitality professionals (chefs, bartenders, servers, captains, entertainment). Our demand strategy targets corporate buyers (EAs, Office Managers, HR, Operations) and luxury private event clients (estate managers, concierges). Strategic venue and vendor partnerships will drive recurring platform usage and network effects.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
