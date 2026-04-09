@@ -7,7 +7,7 @@ const features = [
 ---
 
 <section class="px-5 h-full flex flex-col justify-center pb-14">
-  <div class="max-w-7xl mx-auto text-center w-full">
+  <div class="max-w-5xl mx-auto text-center w-full">
     <div class="mb-1">
       <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
     </div>
@@ -15,13 +15,13 @@ const features = [
     <div class="w-10 h-0.5 bg-gradient-to-r from-red to-burgundy mx-auto mb-4 sm:mb-6"></div>
 
     <!-- Desktop grid -->
-    <div class="hidden md:grid md:grid-cols-3 gap-4 mb-4">
+    <div class="hidden md:grid md:grid-cols-3 gap-4 md:gap-3 mb-4 md:mb-3">
       {features.map((f) => (
         <div class="group glass-strong overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-          <div class="h-40 overflow-hidden">
+          <div class="h-40 md:h-28 overflow-hidden">
             <img src={f.image} alt={f.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <div class="p-4">
+          <div class="p-4 md:p-3">
             <h3 class="text-sm font-bold text-burgundy mb-1" style="font-family: var(--font-heading);">{f.title}</h3>
             <p class="text-charcoal/70 text-xs leading-snug" style="font-family: var(--font-body);">{f.description}</p>
           </div>
@@ -55,7 +55,7 @@ const features = [
       </div>
     </div>
 
-    <p class="text-[10px] sm:text-xs italic text-charcoal/50 leading-snug max-w-xl mx-auto" style="font-family: var(--font-body);">
+    <p class="text-[10px] sm:text-xs italic text-charcoal/70 leading-snug max-w-xl mx-auto" style="font-family: var(--font-body);">
       The AI planner will first source vendors directly from HELM&rsquo;s curated marketplace. For larger or more complex events, it will also reference a growing dataset of hospitality operations and past event outcomes to optimize planning.
     </p>
   </div>
