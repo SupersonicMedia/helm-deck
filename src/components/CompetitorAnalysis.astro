@@ -1,0 +1,396 @@
+<section class="px-5 h-full flex flex-col justify-center pb-14">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="text-center mb-1">
+      <img src="/images/helm-submark-burgundy.png" alt="HELM" class="h-5 sm:h-7 w-auto mx-auto" />
+    </div>
+    <h2 class="section-heading fade-up text-2xl sm:text-4xl text-center mb-3 sm:mb-4">Competitive Landscape</h2>
+
+    <!-- Desktop: chart + info side by side / Mobile: stacked -->
+    <div class="md:grid md:grid-cols-2 md:gap-6">
+      <!-- Positioning Chart -->
+      <div class="glass-strong p-3 sm:p-4 mb-2 md:mb-0 fade-up">
+        <div class="comp-chart relative w-full" id="comp-chart" role="img" aria-label="Competitor positioning chart">
+          <!-- Axis labels -->
+          <span class="absolute -left-[16px] sm:-left-[18px] top-1/2 -translate-y-1/2 -translate-x-1/2 -rotate-90 text-[7px] sm:text-[9px] font-bold tracking-widest text-charcoal/40 whitespace-nowrap" style="font-family: var(--font-body);">PREMIUM SERVICE</span>
+          <span class="absolute bottom-[-14px] left-1/2 -translate-x-1/2 text-[7px] sm:text-[9px] font-bold tracking-widest text-charcoal/40 whitespace-nowrap" style="font-family: var(--font-body);">AI &amp; TECHNOLOGY</span>
+
+          <!-- Quadrant lines -->
+          <div class="absolute left-1/2 top-0 bottom-0 w-px bg-charcoal/10"></div>
+          <div class="absolute top-1/2 left-0 right-0 h-px bg-charcoal/10"></div>
+
+          <!-- Quadrant labels -->
+          <span class="absolute top-1 left-2 text-[6px] sm:text-[8px] text-charcoal/20" style="font-family: var(--font-body);">High Touch / Low Tech</span>
+          <span class="absolute top-1 right-2 text-[6px] sm:text-[8px] text-charcoal/20" style="font-family: var(--font-body);">High Touch / High Tech</span>
+          <span class="absolute bottom-1 left-2 text-[6px] sm:text-[8px] text-charcoal/20" style="font-family: var(--font-body);">Low Touch / Low Tech</span>
+          <span class="absolute bottom-1 right-2 text-[6px] sm:text-[8px] text-charcoal/20" style="font-family: var(--font-body);">Low Touch / High Tech</span>
+
+          <!-- Competitor dots — clickable -->
+          <button class="comp-dot" style="left: 12%; top: 20%;" data-comp="culinistas" aria-label="The Culinistas">
+            <span class="comp-label">The Culinistas</span>
+          </button>
+          <button class="comp-dot" style="left: 18%; top: 35%;" data-comp="takeachef" aria-label="Take a Chef">
+            <span class="comp-label">Take a Chef</span>
+          </button>
+          <button class="comp-dot" style="left: 25%; top: 38%;" data-comp="yhangry" aria-label="Yhangry">
+            <span class="comp-label">Yhangry</span>
+          </button>
+          <button class="comp-dot" style="left: 38%; top: 32%;" data-comp="theknot" aria-label="The Knot">
+            <span class="comp-label">The Knot</span>
+          </button>
+          <button class="comp-dot" style="left: 30%; top: 58%;" data-comp="gigsalad" aria-label="GigSalad">
+            <span class="comp-label">GigSalad</span>
+          </button>
+          <button class="comp-dot" style="left: 18%; top: 62%;" data-comp="thebash" aria-label="The Bash">
+            <span class="comp-label">The Bash</span>
+          </button>
+          <button class="comp-dot" style="left: 42%; top: 68%;" data-comp="thumbtack" aria-label="Thumbtack">
+            <span class="comp-label">Thumbtack</span>
+          </button>
+          <button class="comp-dot" style="left: 62%; top: 28%;" data-comp="airbnb" aria-label="Airbnb">
+            <span class="comp-label">Airbnb</span>
+          </button>
+
+          <!-- HELM dot — top right quadrant, standout -->
+          <button class="comp-dot helm-dot active" style="left: 82%; top: 14%;" data-comp="helm" aria-label="HELM">
+            <span class="comp-label helm-label">HELM</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Info Panel — updates on dot click -->
+      <div class="flex flex-col">
+        <!-- Active competitor detail card -->
+        <div id="comp-info" class="glass-dark p-3 sm:p-4 card-red-accent mb-2 transition-all duration-300">
+          <h4 id="comp-info-name" class="text-xs sm:text-sm font-bold mb-1" style="font-family: var(--font-heading); color: var(--color-red);">HELM</h4>
+          <p id="comp-info-category" class="text-[9px] sm:text-[11px] text-charcoal/40 mb-1.5" style="font-family: var(--font-body);">Luxury events + staffing + vendors</p>
+          <p id="comp-info-note" class="text-[10px] sm:text-xs leading-relaxed text-charcoal/70" style="font-family: var(--font-body);">Premium-only marketplace + AI agent replaces planner work. Agentic coordination: venue/vendor outreach, timelines/checklists, quantity recommendations, confirmation management&mdash;plus a vetted luxury supply layer.</p>
+          <div id="comp-info-checks" class="mt-2 flex flex-wrap gap-1.5">
+            <span class="check-pill has"><span class="pill-dot"></span>Premium / Vetted Supply</span>
+            <span class="check-pill has"><span class="pill-dot"></span>End-to-End Booking</span>
+            <span class="check-pill has"><span class="pill-dot"></span>Multi-Category Staffing</span>
+            <span class="check-pill has"><span class="pill-dot"></span>Agentic AI Planning</span>
+          </div>
+        </div>
+
+        <!-- Defensibility flywheel — always visible -->
+        <div class="glass-dark p-3 sm:p-4 fade-up" style="border-left: 3px solid var(--color-red);">
+          <h4 class="text-[10px] sm:text-xs font-bold text-red mb-1" style="font-family: var(--font-heading);">HELM Defensibility Flywheel</h4>
+          <div class="flex flex-wrap items-center gap-1 text-[8px] sm:text-[10px] text-charcoal/60" style="font-family: var(--font-body);">
+            <span class="font-semibold text-burgundy">Premium Supply</span>
+            <span>&rarr;</span>
+            <span>Better Outcomes</span>
+            <span>&rarr;</span>
+            <span>Repeat Demand</span>
+            <span>&rarr;</span>
+            <span>More Transactions</span>
+            <span>&rarr;</span>
+            <span>Better Data</span>
+            <span>&rarr;</span>
+            <span class="font-semibold text-red">Better AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .comp-chart {
+    height: 220px;
+    border-left: 2px solid rgba(0,0,0,0.15);
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+  @media (min-width: 640px) {
+    .comp-chart {
+      height: 240px;
+    }
+  }
+  @media (min-width: 768px) {
+    .comp-chart {
+      height: 280px;
+    }
+  }
+
+  .comp-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(91, 26, 42, 0.45);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    z-index: 1;
+  }
+  .comp-dot.animate {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .comp-dot:hover {
+    background: var(--color-burgundy);
+    box-shadow: 0 0 0 3px rgba(91, 26, 42, 0.2);
+    z-index: 3;
+  }
+  .comp-dot.active {
+    background: var(--color-red);
+    box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.25), 0 0 12px rgba(196, 30, 58, 0.3);
+    z-index: 4;
+    animation: dotPulse 1.5s ease-in-out infinite;
+  }
+  .comp-dot.active .comp-label {
+    color: var(--color-red);
+    font-weight: 800;
+  }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.25), 0 0 12px rgba(196, 30, 58, 0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(196, 30, 58, 0.15), 0 0 18px rgba(196, 30, 58, 0.2); }
+  }
+
+  .comp-dot.helm-dot {
+    width: 18px;
+    height: 18px;
+    background: var(--color-red);
+    box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.2), 0 0 12px rgba(196, 30, 58, 0.3);
+    z-index: 2;
+  }
+  .comp-dot.helm-dot:hover, .comp-dot.helm-dot.active {
+    box-shadow: 0 0 0 5px rgba(196, 30, 58, 0.3), 0 0 16px rgba(196, 30, 58, 0.4);
+  }
+  @media (min-width: 640px) {
+    .comp-dot {
+      width: 14px;
+      height: 14px;
+    }
+    .comp-dot.helm-dot {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .comp-label {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 3px);
+    transform: translateX(-50%);
+    font-size: 6px;
+    font-family: var(--font-body);
+    white-space: nowrap;
+    color: rgba(0,0,0,0.4);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  @media (min-width: 640px) {
+    .comp-label {
+      font-size: 8px;
+      top: calc(100% + 4px);
+    }
+  }
+
+  .comp-label.helm-label {
+    color: var(--color-red);
+    font-size: 8px;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+  }
+  @media (min-width: 640px) {
+    .comp-label.helm-label {
+      font-size: 11px;
+    }
+  }
+
+  #comp-info {
+    min-height: 80px;
+  }
+  #comp-info.flash {
+    animation: infoFlash 0.3s ease;
+  }
+  @keyframes infoFlash {
+    0% { opacity: 0.5; transform: translateY(4px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  :global(.check-pill) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  @media (min-width: 640px) {
+    :global(.check-pill) { font-size: 9px; padding: 3px 10px; }
+  }
+  :global(.check-pill .pill-dot) {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  :global(.check-pill.has) {
+    background: rgba(91, 26, 42, 0.08);
+    color: var(--color-burgundy);
+  }
+  :global(.check-pill.has .pill-dot) { background: var(--color-red); }
+  :global(.check-pill.missing) {
+    background: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.25);
+  }
+  :global(.check-pill.missing .pill-dot) { background: rgba(0, 0, 0, 0.15); }
+  :global(.check-pill.partial) {
+    background: rgba(184, 134, 11, 0.08);
+    color: rgba(184, 134, 11, 0.8);
+  }
+  :global(.check-pill.partial .pill-dot) { background: #B8860B; }
+</style>
+
+<script is:inline>
+  (function() {
+    var dots = document.querySelectorAll('.comp-dot');
+    var slide = document.getElementById('slide-6');
+    if (!slide || !dots.length) return;
+
+    // Competitor data from spreadsheet
+    var competitors = {
+      culinistas: {
+        name: 'The Culinistas',
+        category: 'Vetted in-home chefs + staffing',
+        note: 'Strong vetting + household services; not an agentic event planning platform.',
+        checks: { premium: true, booking: false, staffing: false, ai: false }
+      },
+      takeachef: {
+        name: 'Take a Chef',
+        category: 'Private chef booking',
+        note: 'Chef-specific; proposal/menu flow; not a full event staffing platform.',
+        checks: { premium: false, booking: false, staffing: false, ai: false }
+      },
+      yhangry: {
+        name: 'Yhangry',
+        category: 'Private chef booking',
+        note: 'Chef marketplace; often positioned around exclusive chefs; not end-to-end event ops.',
+        checks: { premium: false, booking: false, staffing: false, ai: false }
+      },
+      theknot: {
+        name: 'The Knot',
+        category: 'Weddings (planning tools + vendors)',
+        note: 'Huge wedding vendor marketplace + planning tools; AI assists vendor discovery but not agentic coordination of all event operations.',
+        checks: { premium: false, booking: false, staffing: false, ai: 'partial' }
+      },
+      gigsalad: {
+        name: 'GigSalad',
+        category: 'Event entertainment + services',
+        note: '"Full-service platform" for booking entertainers/pros; broad categories, not premium-only or AI-planner replacement.',
+        checks: { premium: false, booking: true, staffing: false, ai: false }
+      },
+      thebash: {
+        name: 'The Bash',
+        category: 'Party entertainment + vendors',
+        note: 'Vendor marketplace + inspiration; strong in entertainment/vendor discovery.',
+        checks: { premium: false, booking: false, staffing: false, ai: false }
+      },
+      thumbtack: {
+        name: 'Thumbtack',
+        category: 'General local services',
+        note: 'Broad pro marketplace; not premium-vetted; not specialized for luxury events.',
+        checks: { premium: false, booking: false, staffing: false, ai: false }
+      },
+      airbnb: {
+        name: 'Airbnb',
+        category: 'Travel experiences / services',
+        note: 'Strong marketplace brand; not built for staffing entire events.',
+        checks: { premium: true, booking: true, staffing: false, ai: false }
+      },
+      helm: {
+        name: 'HELM',
+        category: 'Luxury events + staffing + vendors',
+        note: 'Premium-only marketplace + AI agent replaces planner work. Agentic coordination: venue/vendor outreach, timelines/checklists, quantity recommendations, confirmation management\u2014plus a vetted luxury supply layer.',
+        checks: { premium: true, booking: true, staffing: true, ai: true },
+        isHelm: true
+      }
+    };
+
+    var checkLabels = {
+      premium: 'Premium / Vetted Supply',
+      booking: 'End-to-End Booking',
+      staffing: 'Multi-Category Staffing',
+      ai: 'Agentic AI Planning'
+    };
+
+    var nameEl = document.getElementById('comp-info-name');
+    var categoryEl = document.getElementById('comp-info-category');
+    var noteEl = document.getElementById('comp-info-note');
+    var checksEl = document.getElementById('comp-info-checks');
+    var infoCard = document.getElementById('comp-info');
+
+    function showCompetitor(key) {
+      var data = competitors[key];
+      if (!data) return;
+
+      // Update active dot
+      dots.forEach(function(d) { d.classList.remove('active'); });
+      var activeDot = document.querySelector('[data-comp="' + key + '"]');
+      if (activeDot) activeDot.classList.add('active');
+
+      // Update info card
+      nameEl.textContent = data.name;
+      nameEl.style.color = data.isHelm ? 'var(--color-red)' : '';
+      categoryEl.textContent = data.category;
+      noteEl.textContent = data.note;
+
+      // Build check pills
+      checksEl.innerHTML = '';
+      Object.keys(checkLabels).forEach(function(ck) {
+        var val = data.checks[ck];
+        var item = document.createElement('span');
+        var cls;
+        if (val === true) { cls = 'has'; }
+        else if (val === 'partial') { cls = 'partial'; }
+        else { cls = 'missing'; }
+        item.className = 'check-pill ' + cls;
+        item.innerHTML = '<span class="pill-dot"></span>' + checkLabels[ck];
+        checksEl.appendChild(item);
+      });
+
+      // Flash animation
+      infoCard.classList.remove('flash');
+      void infoCard.offsetWidth;
+      infoCard.classList.add('flash');
+    }
+
+    // Click handlers on dots
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var key = dot.getAttribute('data-comp');
+        if (key) showCompetitor(key);
+      });
+    });
+
+    // Animate dots on scroll
+    function animateDots() {
+      dots.forEach(function(dot, i) {
+        dot.classList.remove('animate');
+        setTimeout(function() {
+          dot.classList.add('animate');
+        }, 200 + i * 120);
+      });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateDots();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(slide);
+  })();
+</script>
